@@ -10,11 +10,42 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@micro-services/core-constants": [
+        "libs/core/constants/src/index.ts"
+      ],
+      "@micro-services/core-models": [
+        "libs/core/models/src/index.ts"
+      ],
+      "@micro-services/core-utils": [
+        "libs/core/utils/src/index.ts"
+      ],
+      "@micro-services/api-constants": [
+        "libs/api/constants/src/index.ts"
+      ],
+      "@micro-services/api-models": [
+        "libs/api/models/src/index.ts"
+      ],
+      "@micro-services/api-utils": [
+        "libs/api/utils/src/index.ts"
+      ],
+      "@micro-services/api-platform": [
+        "libs/api/platform/src/index.ts"
+      ],
+      "@micro-services/api-factories": [
+        "libs/api/factories/src/index.ts"
+      ]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

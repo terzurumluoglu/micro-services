@@ -1,0 +1,19 @@
+{
+  "name": "api-factories",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/factories/src",
+  "projectType": "library",
+  "tags": ["api", "api:factories"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/factories",
+        "main": "libs/api/factories/src/index.ts",
+        "tsConfig": "libs/api/factories/tsconfig.lib.json",
+        "assets": ["libs/api/factories/*.md"]
+      }
+    }
+  }
+}

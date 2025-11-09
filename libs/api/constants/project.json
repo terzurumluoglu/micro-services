@@ -1,0 +1,19 @@
+{
+  "name": "api-constants",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/constants/src",
+  "projectType": "library",
+  "tags": ["api", "api:constants"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/constants",
+        "main": "libs/api/constants/src/index.ts",
+        "tsConfig": "libs/api/constants/tsconfig.lib.json",
+        "assets": ["libs/api/constants/*.md"]
+      }
+    }
+  }
+}

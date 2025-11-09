@@ -6,8 +6,11 @@
   "private": true,
   "dependencies": {
     "@fastify/autoload": "~6.0.3",
+    "@fastify/cors": "^11.1.0",
+    "@fastify/env": "^5.0.3",
     "@fastify/sensible": "~6.0.2",
     "axios": "^1.6.0",
+    "dotenv": "^17.2.3",
     "fastify": "~5.2.1",
     "fastify-plugin": "~5.0.1"
   },
@@ -24,19 +27,20 @@
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@types/jest": "30.0.0",
-    "@types/node": "~18.16.9",
+    "@types/node": "20.19.9",
     "esbuild": "^0.19.2",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "10.1.8",
     "jest": "30.0.5",
     "jest-environment-node": "^29.7.0",
+    "jest-util": "30.0.5",
+    "jsonc-eslint-parser": "^2.1.0",
     "nx": "22.0.2",
     "prettier": "^2.6.2",
     "ts-jest": "29.4.5",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
     "typescript": "5.9.3",
-    "typescript-eslint": "^8.19.0",
-    "jest-util": "30.0.5"
+    "typescript-eslint": "^8.19.0"
   }
 }

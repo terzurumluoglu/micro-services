@@ -1,27 +1,44 @@
-import * as path from 'path';
 import { FastifyInstance } from 'fastify';
-import AutoLoad from '@fastify/autoload';
+import fastifyAutoload from '@fastify/autoload';
+import path from 'path';
+import { Server } from '@micro-services/api-platform';
+import { registerSharedPlugins } from '@micro-services/api-utils';
+import rootRoutes from './routes/root.route';
+import usersRoutes from './routes/users.route';
 
-/* eslint-disable-next-line */
-export interface AppOptions {}
+export class App {
+  #server: Server;
+  constructor() {
+    this.#server = new Server();
+  }
 
-export async function app(fastify: FastifyInstance, opts: AppOptions) {
-  // Place here your custom code!
+  async start(): Promise<void> {
+    try {
+      await registerSharedPlugins(this.#server.fastify);
+      await this.#server.init(this.#registerPlugins);
 
-  // Do not touch the following lines
+      const { HOST, PORT, MESSAGE } = this.#server.fastify.config;
 
-  // This loads all plugins defined in plugins
-  // those should be support plugins that are reused
-  // through your application
-  fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'plugins'),
-    options: { ...opts },
-  });
+      await this.#server.fastify.listen({ host: HOST, port: PORT });
+      console.log(MESSAGE.replace('{{PORT}}', PORT.toString()));
+    } catch (err) {
+      this.#server.fastify.log.error(err);
+      process.exit(1);
+    }
+  }
 
-  // This loads all plugins defined in routes
-  // define your routes in one of these
-  fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'routes'),
-    options: { ...opts },
-  });
+  async close(): Promise<void> {
+    await this.#server.fastify.close();
+  }
+
+  #registerPlugins = async (app: FastifyInstance): Promise<void> => {
+    await app.register(fastifyAutoload, {
+      dir: path.join(__dirname, 'plugins'),
+    });
+    await app.register(rootRoutes);
+    await app.register(usersRoutes, { prefix: 'users' });
+    // await app.register(fastifyAutoload, {
+    //   dir: path.join(__dirname, 'routes'),
+    // });
+  };
 }
