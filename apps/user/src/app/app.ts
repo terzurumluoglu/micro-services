@@ -18,8 +18,8 @@ export class App {
       await this.#server.init(this.#registerPlugins);
 
       const { HOST, PORT, MESSAGE } = this.#server.fastify.config;
-
       await this.#server.fastify.listen({ host: HOST, port: PORT });
+
       console.log(MESSAGE.replace('{{PORT}}', PORT.toString()));
     } catch (err) {
       this.#server.fastify.log.error(err);

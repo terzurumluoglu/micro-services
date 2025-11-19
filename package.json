@@ -5,7 +5,8 @@
   "scripts": {
     "serve:user:dev": "npx nx run user:serve --configuration=development",
     "serve:user:prod": "npx nx run user:serve --configuration=production",
-    "build:user:dev": "npx nx run user:build --configuration=development"
+    "build:user:dev": "npx nx run user:build --configuration=development",
+    "serve:user:dev:no-cache": "npx nx run user:serve --configuration=development --skip-nx-cache"
   },
   "private": true,
   "dependencies": {
