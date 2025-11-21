@@ -6,4 +6,5 @@ export default async function userRoutes(fastify: FastifyInstance) {
   fastify
     .get('/', USER_SCHEMA.getAllUsers, USER_CONTROLLER.getAllUsers)
     .get('/:id', USER_SCHEMA.getUserById, USER_CONTROLLER.getUserById);
+  fastify.post('/bulk', USER_SCHEMA.bulk, USER_CONTROLLER.bulk);
 }

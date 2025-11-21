@@ -10,6 +10,7 @@ export const ENV_SCHEMA: FastifyEnvOptions = {
       MESSAGE: { type: 'string', default: 'Service running on port {{PORT}}' },
       ENVIRONMENT: { type: 'string', default: 'development' },
       LOG_PRETTY: { type: 'boolean', default: true },
+      USER_API_URL: { type: 'string', default: 'http://localhost:3000/' },
     },
   },
   confKey: 'config',

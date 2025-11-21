@@ -41,6 +41,12 @@
       ],
       "@micro-services/api-factories": [
         "libs/api/factories/src/index.ts"
+      ],
+      "@micro-services/api-user-client": [
+        "libs/api/clients/user-client/src/index.ts"
+      ],
+      "@micro-services/api-post-client": [
+        "libs/api/clients/post-client/src/index.ts"
       ]
     }
   },

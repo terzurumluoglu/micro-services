@@ -1,4 +1,4 @@
-import { UserSchema } from '../models/user';
+import { UserSchema } from '@micro-services/api-models';
 
 const SUCCESS_PROPERTIES = {
   statusCode: { type: 'number' },
@@ -24,6 +24,34 @@ const REQUIRED_PROPERTIES = ['statusCode', 'success', 'timestamp', 'result'];
 
 const getAllUsers = {
   schema: {
+    response: {
+      200: {
+        type: 'object',
+        properties: {
+          ...SUCCESS_PROPERTIES,
+          result: {
+            type: 'array',
+            items: UserSchema,
+          },
+        },
+        required: REQUIRED_PROPERTIES,
+      },
+    },
+  },
+};
+
+const bulk = {
+  schema: {
+    body: {
+      type: 'object',
+      properties: {
+        ids: {
+          type: 'array',
+          items: { type: 'number' },
+        },
+      },
+      required: ['ids'],
+    },
     response: {
       200: {
         type: 'object',
@@ -70,5 +98,6 @@ const getUserById = {
 
 export const USER_SCHEMA = {
   getAllUsers,
+  bulk,
   getUserById,
 };

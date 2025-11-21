@@ -1,0 +1,20 @@
+{
+  "name": "user-client",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/api/clients/user-client/src",
+  "projectType": "library",
+  "tags": ["api:clients", "api:clients:user"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/api/clients/user-client",
+        "tsConfig": "libs/api/clients/user-client/tsconfig.lib.json",
+        "packageJson": "libs/api/clients/user-client/package.json",
+        "main": "libs/api/clients/user-client/src/index.ts",
+        "assets": ["libs/api/clients/user-client/*.md"]
+      }
+    }
+  }
+}

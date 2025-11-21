@@ -1,4 +1,4 @@
-import { PostSchema } from '../models/post';
+import { PostSchema } from '@micro-services/api-models';
 
 const SUCCESS_PROPERTIES = {
   statusCode: { type: 'number' },

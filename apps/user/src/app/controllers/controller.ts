@@ -3,10 +3,17 @@ import {
   HttpResponder,
   HttpResponseFactory,
 } from '@micro-services/api-factories';
-import { UserService } from '../services/service';
 
 export const getAllUsers = (req: FastifyRequest, reply: FastifyReply) => {
-  const users = UserService.getAllUsers();
+  const users = req.server.services.user.getAllUsers();
+  return HttpResponder.send(reply, HttpResponseFactory.success(users));
+};
+
+export const bulk = (
+  req: FastifyRequest<{ Body: { ids: number[] } }>,
+  reply: FastifyReply
+) => {
+  const users = req.server.services.user.getUsersByIds(req.body.ids);
   return HttpResponder.send(reply, HttpResponseFactory.success(users));
 };
 
@@ -14,11 +21,12 @@ export const getUserById = (
   req: FastifyRequest<{ Params: { id: number } }>,
   reply: FastifyReply
 ) => {
-  const user = UserService.getUserById(req.params.id);
+  const user = req.server.services.user.getUserById(req.params.id);
   return HttpResponder.send(reply, HttpResponseFactory.success(user));
 };
 
 export const USER_CONTROLLER = {
   getAllUsers,
+  bulk,
   getUserById,
 };

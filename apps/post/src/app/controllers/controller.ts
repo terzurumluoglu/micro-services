@@ -3,19 +3,19 @@ import {
   HttpResponder,
   HttpResponseFactory,
 } from '@micro-services/api-factories';
-import { PostService } from '../services/service';
 
-export const getAllPosts = (req: FastifyRequest, reply: FastifyReply) => {
-  const users = PostService.getAllPosts();
-  return HttpResponder.send(reply, HttpResponseFactory.success(users));
+export const getAllPosts = async (req: FastifyRequest, reply: FastifyReply) => {
+  const posts = await req.server.services.post.getAllPosts();
+
+  return HttpResponder.send(reply, HttpResponseFactory.success(posts));
 };
 
-export const getPostById = (
+export const getPostById = async (
   req: FastifyRequest<{ Params: { id: number } }>,
   reply: FastifyReply
 ) => {
-  const user = PostService.getPostById(req.params.id);
-  return HttpResponder.send(reply, HttpResponseFactory.success(user));
+  const post = await req.server.services.post.getPostById(req.params.id);
+  return HttpResponder.send(reply, HttpResponseFactory.success(post));
 };
 
 export const POST_CONTROLLER = {
