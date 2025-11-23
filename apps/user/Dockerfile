@@ -43,5 +43,3 @@ USER appuser
 EXPOSE 3000
 
 CMD ["node","dist/apps/user/main"]
-
-# docker container run -d --name con-auth --env-file libs/api/utils/src/environments/environment.development.env -p 80:8080 user-app 

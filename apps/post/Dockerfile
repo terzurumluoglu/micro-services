@@ -35,5 +35,3 @@ USER apppost
 EXPOSE 3001
 
 CMD ["node","dist/apps/post/main"]
-
-# docker container run -d --name con-auth --env-file libs/api/utils/src/environments/environment.development.env -p 80:8080 user-app 
