@@ -3,12 +3,18 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "serve:user:dev": "npx nx run user:serve --configuration=development",
-    "serve:user:prod": "npx nx run user:serve --configuration=production",
     "serve:post:dev": "npx nx run post:serve --configuration=development",
+    "serve:user:dev": "npx nx run user:serve --configuration=development",
+    "serve:api-gateway:dev": "npx nx run api-gateway:serve --configuration=development",
     "serve:post:prod": "npx nx run post:serve --configuration=production",
+    "serve:user:prod": "npx nx run user:serve --configuration=production",
+    "serve:api-gateway:prod": "npx nx run api-gateway:serve --configuration=production",
+    "build:post:dev": "npx nx run post:build --configuration=development",
     "build:user:dev": "npx nx run user:build --configuration=development",
-    "serve:user:dev:no-cache": "npx nx run user:serve --configuration=development --skip-nx-cache"
+    "build:api-gateway:dev": "npx nx run api-gateway:build --configuration=development",
+    "serve:post:dev:no-cache": "npx nx run post:serve --configuration=development --skip-nx-cache",
+    "serve:user:dev:no-cache": "npx nx run user:serve --configuration=development --skip-nx-cache",
+    "serve:api-gateway:dev:no-cache": "npx nx run api-gateway:serve --configuration=development --skip-nx-cache"
   },
   "private": true,
   "dependencies": {
@@ -16,14 +22,15 @@
     "@fastify/cors": "^11.1.0",
     "@fastify/env": "^5.0.3",
     "@fastify/sensible": "~6.0.2",
+    "@sinclair/typebox": "^0.34.0",
     "axios": "^1.6.0",
     "dotenv": "^17.2.3",
     "fastify": "~5.2.1",
-    "fastify-plugin": "~5.0.1",
-    "@sinclair/typebox": "^0.34.0"
+    "fastify-plugin": "~5.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "@nx/docker": "22.0.2",
     "@nx/esbuild": "22.0.2",
     "@nx/eslint": "22.0.2",
     "@nx/eslint-plugin": "22.0.2",
