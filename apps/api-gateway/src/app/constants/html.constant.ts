@@ -36,7 +36,7 @@ export const HTML = `<!DOCTYPE html>
 </head>
 
 <body>
-    <h3 class="text-decoration">Post Api is Running...</h3>
+    <h3 class="text-decoration">Api Gateway is Running...</h3>
 </body>
 
 </html>`;

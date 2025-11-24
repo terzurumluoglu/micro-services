@@ -21,6 +21,7 @@
     "@fastify/autoload": "~6.0.3",
     "@fastify/cors": "^11.1.0",
     "@fastify/env": "^5.0.3",
+    "@fastify/http-proxy": "^11.3.0",
     "@fastify/sensible": "~6.0.2",
     "@sinclair/typebox": "^0.34.0",
     "axios": "^1.6.0",

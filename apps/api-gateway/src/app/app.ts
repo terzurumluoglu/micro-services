@@ -3,7 +3,6 @@ import fastifyAutoload from '@fastify/autoload';
 import path from 'path';
 import { Server } from '@micro-services/api-platform';
 import { registerSharedPlugins } from '@micro-services/api-utils';
-import rootRoutes from './routes/root.route';
 
 export class App {
   #server: Server;
@@ -34,9 +33,5 @@ export class App {
     await app.register(fastifyAutoload, {
       dir: path.join(__dirname, 'plugins'),
     });
-    await app.register(rootRoutes);
-    // await app.register(fastifyAutoload, {
-    //   dir: path.join(__dirname, 'routes'),
-    // });
   };
 }
