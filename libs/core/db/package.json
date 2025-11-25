@@ -1,5 +1,5 @@
 {
-  "name": "@micro-services/api-clients-post-client",
+  "name": "@micro-services/core-db",
   "version": "0.0.1",
   "private": true,
   "type": "commonjs",

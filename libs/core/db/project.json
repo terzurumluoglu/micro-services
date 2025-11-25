@@ -1,0 +1,19 @@
+{
+  "name": "core-db",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/core/db/src",
+  "projectType": "library",
+  "tags": ["db", "core:db"],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/core/db",
+        "main": "libs/core/db/src/index.ts",
+        "tsConfig": "libs/core/db/tsconfig.lib.json",
+        "assets": ["libs/core/db/*.md"]
+      }
+    }
+  }
+}

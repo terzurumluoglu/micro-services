@@ -1,5 +1,5 @@
 {
-  "name": "post-client",
+  "name": "api-clients-post-client",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/api/clients/post-client/src",
   "projectType": "library",

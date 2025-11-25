@@ -1,5 +1,5 @@
 {
-  "name": "@micro-services/user-client",
+  "name": "@micro-services/api-clients-user-client",
   "version": "0.0.1",
   "private": true,
   "type": "commonjs",

@@ -21,6 +21,9 @@
       "@micro-services/core-constants": [
         "libs/core/constants/src/index.ts"
       ],
+      "@micro-services/core-db": [
+        "libs/core/db/src/index.ts"
+      ],
       "@micro-services/core-models": [
         "libs/core/models/src/index.ts"
       ],
@@ -30,24 +33,24 @@
       "@micro-services/api-constants": [
         "libs/api/constants/src/index.ts"
       ],
+      "@micro-services/api-factories": [
+        "libs/api/factories/src/index.ts"
+      ],
       "@micro-services/api-models": [
         "libs/api/models/src/index.ts"
-      ],
-      "@micro-services/api-utils": [
-        "libs/api/utils/src/index.ts"
       ],
       "@micro-services/api-platform": [
         "libs/api/platform/src/index.ts"
       ],
-      "@micro-services/api-factories": [
-        "libs/api/factories/src/index.ts"
+      "@micro-services/api-utils": [
+        "libs/api/utils/src/index.ts"
+      ],
+      "@micro-services/api-post-client": [
+        "libs/api/clients/post-client/src/index.ts"
       ],
       "@micro-services/api-user-client": [
         "libs/api/clients/user-client/src/index.ts"
       ],
-      "@micro-services/api-post-client": [
-        "libs/api/clients/post-client/src/index.ts"
-      ]
     }
   },
   "exclude": [

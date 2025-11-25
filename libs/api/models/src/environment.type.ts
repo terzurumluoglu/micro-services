@@ -4,10 +4,10 @@ export type EnvironmentConfig = {
   MESSAGE: string;
   PORT: number;
   LOG_PRETTY: boolean;
-  // DB_NAME: string;
-  // DB_USERNAME: string;
-  // DB_PASSWORD: string;
-  // CONNECTION_STRING: string;
+  DB_NAME: string;
+  DB_USERNAME: string;
+  DB_PASSWORD: string;
+  CONNECTION_STRING: string;
   // JWT_AUTH_SECRET: string;
   // JWT_AUTH_EXPIRE: string;
   // JWT_AUTH_COOKIE_EXPIRE: number;

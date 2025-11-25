@@ -1,11 +1,14 @@
 import { HttpError } from '@micro-services/api-models';
 import { USERS } from '../../mock';
 import { FastifyInstance } from 'fastify';
+import { UserCollection } from '@micro-services/core-db';
 
 export const UserService = (fastify: FastifyInstance) => {
   return {
     getAllUsers: () => {
-      return USERS;
+      const userCollection = new UserCollection(fastify.mongo.db);
+      return userCollection.find();
+      // return USERS;
     },
     getUsersByIds: (ids: number[]) => {
       return USERS.filter((user) => ids.includes(user.id));

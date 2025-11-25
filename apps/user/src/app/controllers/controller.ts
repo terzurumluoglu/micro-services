@@ -4,8 +4,8 @@ import {
   HttpResponseFactory,
 } from '@micro-services/api-factories';
 
-export const getAllUsers = (req: FastifyRequest, reply: FastifyReply) => {
-  const users = req.server.services.user.getAllUsers();
+export const getAllUsers = async (req: FastifyRequest, reply: FastifyReply) => {
+  const users = await req.server.services.user.getAllUsers();
   return HttpResponder.send(reply, HttpResponseFactory.success(users));
 };
 
