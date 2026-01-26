@@ -2,10 +2,14 @@
   "name": "@micro-services/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run @micro-services/api-gateway:serve:development"
+  },
   "private": true,
   "dependencies": {
     "@fastify/autoload": "~6.0.3",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/env": "^5.0.3",
     "@fastify/sensible": "~6.0.2",
     "axios": "^1.6.0",
     "fastify": "~5.2.1",
@@ -28,11 +32,15 @@
     "eslint-config-prettier": "^10.0.0",
     "nx": "22.4.1",
     "prettier": "~3.6.2",
+    "ts-node": "10.9.1",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.40.0"
   },
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "libs/api/platform",
+    "libs/api/core",
+    "libs/api/models"
   ]
 }
