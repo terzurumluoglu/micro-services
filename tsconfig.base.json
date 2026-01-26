@@ -16,9 +16,6 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@micro-services/source"],
-    "paths": {
-      "@micro-services/api/utils": ["libs/api/utils/src/index.ts"]
-    }
+    "customConditions": ["@micro-services/source"]
   }
 }

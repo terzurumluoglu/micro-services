@@ -2,10 +2,7 @@
   "name": "@micro-services/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {
-    "serve:gateway:dev": "npx nx run @micro-services/api-gateway:serve --configuration=development",
-    "serve:gateway:prod": "npx nx run @micro-services/api-gateway:serve --configuration=production"
-  },
+  "scripts": {},
   "private": true,
   "dependencies": {
     "@fastify/autoload": "~6.0.3",
@@ -29,7 +26,6 @@
     "esbuild": "^0.19.2",
     "eslint": "^9.8.0",
     "eslint-config-prettier": "^10.0.0",
-    "jsonc-eslint-parser": "^2.1.0",
     "nx": "22.4.1",
     "prettier": "~3.6.2",
     "tslib": "^2.3.0",
@@ -37,7 +33,6 @@
     "typescript-eslint": "^8.40.0"
   },
   "workspaces": [
-    "apps/*",
-    "libs/api/utils"
+    "apps/*"
   ]
 }
