@@ -8,15 +8,6 @@
     },
     {
       "path": "./apps/api-gateway"
-    },
-    {
-      "path": "./libs/api/platform"
-    },
-    {
-      "path": "./libs/api/core"
-    },
-    {
-      "path": "./libs/api/models"
     }
   ]
 }

@@ -94,6 +94,11 @@
             "buildTarget": "@micro-services/api-gateway:build:production"
           }
         }
+      },
+      "test": {
+        "options": {
+          "passWithNoTests": true
+        }
       }
     }
   },
