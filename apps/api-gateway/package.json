@@ -30,7 +30,13 @@
           }
         },
         "configurations": {
-          "development": {},
+          "development": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }},
           "production": {
             "esbuildOptions": {
               "sourcemap": false,
