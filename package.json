@@ -2,10 +2,15 @@
   "name": "@micro-services/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "npx nx run @micro-services/api-gateway:serve --configuration=development ",
+    "build": "npx nx run @micro-services/api-gateway:build --configuration=development -- --with-deps"
+  },
   "private": true,
   "dependencies": {
     "@fastify/autoload": "~6.0.3",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/env": "^5.0.3",
     "@fastify/sensible": "~6.0.2",
     "axios": "^1.6.0",
     "fastify": "~5.2.1",

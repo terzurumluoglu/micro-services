@@ -1,0 +1,16 @@
+.git
+.github
+.nx
+.vscode
+node_modules
+tmp
+dist
+.editorconfig
+.gitignore
+.prettierignore
+.prettier
+eslint.config.mjs
+jest.config.ts
+jest.preset.js
+migrations.json
+README.md
