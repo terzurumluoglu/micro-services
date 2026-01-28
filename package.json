@@ -2,14 +2,23 @@
   "name": "@micro-services/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "ENVIRONMENT=development PORT=8080 npx nx run @micro-services/api-gateway:serve",
+    "start:dev": "ENVIRONMENT=development PORT=3005 npx nx run @micro-services/api-gateway:serve",
+    "start:prod": "ENVIRONMENT=production PORT=3006 npx nx run @micro-services/api-gateway:serve",
+    
+    "build": "npx nx run @micro-services/api-gateway:build"
+  },
   "private": true,
   "dependencies": {
     "@fastify/autoload": "~6.0.3",
+    "@fastify/cors": "^11.2.0",
+    "@fastify/env": "^5.0.3",
     "@fastify/sensible": "~6.0.2",
     "axios": "^1.6.0",
     "fastify": "~5.2.1",
-    "fastify-plugin": "~5.0.1"
+    "fastify-plugin": "~5.0.1",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -37,7 +46,6 @@
     "prettier": "~3.6.2",
     "ts-jest": "^29.4.0",
     "ts-node": "10.9.1",
-    "tslib": "^2.3.0",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.40.0"
   },

@@ -1,1 +1,1 @@
-export * from './lib/api-models.js';
+export * from './environment.type';

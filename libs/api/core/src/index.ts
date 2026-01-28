@@ -1,1 +1,3 @@
-export * from './lib/api-core.js';
+export * from './handlers/health-check.handler';
+export * from './register';
+export * from './schemas/health-check.schema';

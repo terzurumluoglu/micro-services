@@ -1,1 +1,1 @@
-export * from './lib/api-platform.js';
+export * from './server';

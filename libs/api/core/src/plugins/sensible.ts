@@ -1,9 +1,11 @@
 import { FastifyInstance } from 'fastify';
+import sensible from '@fastify/sensible';
+
 /**
  * This plugins adds some utilities to handle http errors
  *
  * @see https://github.com/fastify/fastify-sensible
  */
-declare const _default: (fastify: FastifyInstance) => Promise<void>;
-export default _default;
-//# sourceMappingURL=sensible.d.ts.map
+export const sensiblePlugin = (async function (fastify: FastifyInstance) {
+  fastify.register(sensible);
+});
