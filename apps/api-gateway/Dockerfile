@@ -34,4 +34,4 @@ USER appApiGateway
 
 EXPOSE 3005
 
-CMD ["node", "main.js"]
+CMD ["node", "main"]

@@ -1,7 +1,12 @@
+import { buildServer } from './app/app';
 
-import { app } from './app/app';
+async function bootstrap() {
+  const server = await buildServer();
+  const port = Number(server.fastify.config.PORT);
+  await server.start(port);
+}
 
-app().catch((err) => {
-  console.error('Error starting the server:', err);
+bootstrap().catch((err) => {
+  console.error(err);
   process.exit(1);
 });

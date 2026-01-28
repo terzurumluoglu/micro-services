@@ -8,6 +8,7 @@ export class Server {
   }
 
   async start(port: number, host = '0.0.0.0') {
+    await this.fastify.ready();
     await this.fastify.listen({ port, host });
   }
 }

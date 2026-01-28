@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "npx nx run @micro-services/api-gateway:serve --configuration=development ",
-    "build": "npx nx run @micro-services/api-gateway:build --configuration=development -- --with-deps"
+    "start": "ENVIRONMENT=development PORT=8080 npx nx run @micro-services/api-gateway:serve",
+    "start:dev": "ENVIRONMENT=development PORT=3005 npx nx run @micro-services/api-gateway:serve",
+    "start:prod": "ENVIRONMENT=production PORT=3006 npx nx run @micro-services/api-gateway:serve",
+    
+    "build": "npx nx run @micro-services/api-gateway:build"
   },
   "private": true,
   "dependencies": {

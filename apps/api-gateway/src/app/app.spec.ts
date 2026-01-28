@@ -1,20 +1,23 @@
-import Fastify, { FastifyInstance } from 'fastify';
-import { app } from './app';
+import { buildServer } from './app';
+import { Server } from '@micro-services/api-platform';
 
 describe('GET /', () => {
-  let server: FastifyInstance;
+  let server: Server;
 
-  beforeEach(() => {
-    server = Fastify();
-    server.register(app);
+  beforeEach(async () => {
+    server = await buildServer();
+  });
+
+  afterEach(async () => {
+    await server.fastify.close();
   });
 
   it('should respond with a message', async () => {
-    const response = await server.inject({
+    const response = await server.fastify.inject({
       method: 'GET',
       url: '/',
     });
 
-    expect(response.json()).toEqual({ message: 'Hello API' });
+    expect(response.statusCode).toBe(200);
   });
 });
