@@ -25,7 +25,7 @@ WORKDIR /app
 
 COPY --from=builder /workspace/apps/api-gateway/dist .
 COPY --from=builder /workspace/libs ./libs
-COPY --from=builder /workspace/node_modules ./node_modules
+COPY --from=deps /deps/node_modules ./node_modules
 
 RUN ls
 
