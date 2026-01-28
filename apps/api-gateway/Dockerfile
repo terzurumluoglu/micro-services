@@ -1,4 +1,4 @@
-# BUILD STAGE
+# ---------- BUILD ----------
 FROM node:24-alpine AS builder
 
 WORKDIR /workspace
@@ -10,24 +10,21 @@ COPY libs ./libs
 RUN npm ci
 RUN npm run build
 
-# PRODUCTION DEPENDENCIES STAGE
+# ---------- PROD DEPS ----------
 FROM node:24-alpine AS deps
-
 WORKDIR /deps
+
 COPY package*.json ./
 
 RUN npm ci --omit=dev
 
-# PRODUCTION STAGE
+# ---------- RUNTIME ----------
 FROM node:24-alpine
 
 WORKDIR /app
 
-COPY --from=builder /workspace/apps/api-gateway/dist .
-COPY --from=builder /workspace/libs ./libs
-COPY --from=builder /workspace/node_modules ./node_modules
-
-RUN ls
+COPY --from=builder /workspace/apps/api-gateway/dist/main.js .
+COPY --from=deps /deps/node_modules ./node_modules
 
 RUN addgroup -S appGroup \
  && adduser -S appApiGateway -G appGroup \
@@ -37,4 +34,4 @@ USER appApiGateway
 
 EXPOSE 3005
 
-CMD ["node", "main.js"]
+CMD ["node", "main"]
