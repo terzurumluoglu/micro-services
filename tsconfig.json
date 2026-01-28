@@ -13,10 +13,10 @@
       "path": "./libs/api/platform"
     },
     {
-      "path": "./libs/api/core"
+      "path": "./libs/api/models"
     },
     {
-      "path": "./libs/api/models"
+      "path": "./libs/api/core"
     }
   ]
 }

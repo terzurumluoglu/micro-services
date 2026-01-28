@@ -16,7 +16,7 @@
           "format": [
             "cjs"
           ],
-          "bundle": false,
+          "bundle": true,
           "main": "apps/api-gateway/src/main.ts",
           "tsConfig": "apps/api-gateway/tsconfig.app.json",
           "assets": [
@@ -30,7 +30,13 @@
           }
         },
         "configurations": {
-          "development": {},
+          "development": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }},
           "production": {
             "esbuildOptions": {
               "sourcemap": false,
@@ -93,6 +99,11 @@
           "production": {
             "buildTarget": "@micro-services/api-gateway:build:production"
           }
+        }
+      },
+      "test": {
+        "options": {
+          "passWithNoTests": true
         }
       }
     }

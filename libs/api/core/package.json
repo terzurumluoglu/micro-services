@@ -16,9 +16,7 @@
   },
   "nx": {
     "tags": [
-      "lib",
-      "lib-api",
-      "lib-api-core"
+      "lib"
     ],
     "name": "api-core"
   },

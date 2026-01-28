@@ -16,9 +16,7 @@
   },
   "nx": {
     "tags": [
-      "lib",
-      "lib-api",
-      "lib-api-models"
+      "lib"
     ],
     "name": "api-models"
   },
