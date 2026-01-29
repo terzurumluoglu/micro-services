@@ -55,6 +55,7 @@
     "apps/*",
     "libs/api/platform",
     "libs/api/models",
-    "libs/api/core"
+    "libs/api/core",
+    "libs/api/redis"
   ]
 }
