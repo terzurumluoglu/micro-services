@@ -8,6 +8,7 @@ export const HEALTH_CHECK_HANDLER = (req: FastifyRequest, reply: FastifyReply) =
             message: 'OK',
         },
         environment: process.env.ENVIRONMENT,
+        correlationId: req.correlationId,
     };
     reply.code(200).send(response);
 }
