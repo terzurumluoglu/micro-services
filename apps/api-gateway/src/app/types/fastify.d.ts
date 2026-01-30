@@ -5,4 +5,7 @@ declare module 'fastify' {
   interface FastifyInstance {
     config: EnvironmentConfig;
   }
+  interface FastifyRequest {
+    correlationId: string;
+  }
 }

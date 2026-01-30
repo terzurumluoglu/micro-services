@@ -13,11 +13,10 @@ export const HEALTH_CHECK_SCHEMA = {
                     },
                     },
                     environment: { type: 'string' },
+                    correlationId: { type: 'string' },
                 },
                 required: ['code', 'success', 'data', 'environment'],
             },
         },
     },
 };
-
-

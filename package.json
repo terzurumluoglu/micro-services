@@ -6,7 +6,6 @@
     "start": "ENVIRONMENT=development PORT=8080 npx nx run @micro-services/api-gateway:serve",
     "start:dev": "ENVIRONMENT=development PORT=3005 npx nx run @micro-services/api-gateway:serve",
     "start:prod": "ENVIRONMENT=production PORT=3006 npx nx run @micro-services/api-gateway:serve",
-    
     "build": "npx nx run @micro-services/api-gateway:build"
   },
   "private": true,
@@ -14,8 +13,11 @@
     "@fastify/autoload": "~6.0.3",
     "@fastify/cors": "^11.2.0",
     "@fastify/env": "^5.0.3",
+    "@fastify/rate-limit": "^10.3.0",
     "@fastify/sensible": "~6.0.2",
+    "@upstash/redis": "^1.36.1",
     "axios": "^1.6.0",
+    "crypto": "^1.0.1",
     "fastify": "~5.2.1",
     "fastify-plugin": "~5.0.1",
     "tslib": "^2.3.0"
@@ -53,6 +55,7 @@
     "apps/*",
     "libs/api/platform",
     "libs/api/models",
-    "libs/api/core"
+    "libs/api/core",
+    "libs/api/redis"
   ]
 }
